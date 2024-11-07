@@ -1,0 +1,60 @@
+{
+	"folders": [
+		{
+			"path": "forked"
+		},
+		{
+			"path": "blog"
+		},
+		{
+			"path": "glmark2"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"future": "cpp",
+			"*.ipp": "cpp",
+			"string": "cpp",
+			"string_view": "cpp"
+		}
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "(gdb) Launch",
+				"type": "cppdbg",
+				"request": "launch",
+				"program": "/usr/local/bin/glmark2",
+				"args": [],
+				"stopAtEntry": false,
+				"cwd": "${fileDirname}",
+				"environment": [
+					{
+						"name": "LD_LIBRARY_PATH",
+						"value": "/home/luc/mesa-install/lib/x86_64-linux-gnu"
+					}
+				],
+				"externalConsole": false,
+				"MIMode": "gdb",
+				"setupCommands": [
+					{
+						"description": "Set hex display for gdb",
+						"text": "-gdb-set output-radix 16",
+						"ignoreFailures": true
+					},
+					{
+						"description": "Enable pretty-printing for gdb",
+						"text": "-enable-pretty-printing",
+						"ignoreFailures": true
+					},
+					{
+						"description": "Set Disassembly Flavor to Intel",
+						"text": "-gdb-set disassembly-flavor intel",
+						"ignoreFailures": true
+					}
+				]
+			}
+		]
+	}
+}
