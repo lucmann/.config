@@ -1,0 +1,2 @@
+# .config
+my $HOME .config
