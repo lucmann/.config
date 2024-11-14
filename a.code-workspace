@@ -8,6 +8,12 @@
 		},
 		{
 			"path": "glmark2"
+		},
+		{
+			"path": "xserver"
+		},
+		{
+			"path": "sb7code_withmedia"
 		}
 	],
 	"settings": {
@@ -21,18 +27,35 @@
 	"launch": {
 		"version": "0.2.0",
 		"configurations": [
+
 			{
 				"name": "(gdb) Launch",
 				"type": "cppdbg",
 				"request": "launch",
-				"program": "/usr/local/bin/glmark2",
+				"program": "${workspaceFolder:sb7code_withmedia}/bin/multidrawindirect_d",
 				"args": [],
 				"stopAtEntry": false,
-				"cwd": "${fileDirname}",
+				"cwd": "${workspaceFolder:sb7code_withmedia}/bin",
 				"environment": [
 					{
 						"name": "LD_LIBRARY_PATH",
 						"value": "/home/luc/mesa-install/lib/x86_64-linux-gnu"
+					},
+					{
+						"name": "MESA_LOADER_DRIVER_OVERRIDE",
+						"value": "llvmpipe"
+					},
+					{
+						"name": "LIBGL_KOPPER_DRI2",
+						"value": "false"
+					},
+					{
+						"name": "LIBGL_ALWAYS_SOFTWARE",
+						"value": "true"
+					},
+					{
+						"name": "GALLIUM_HUD",
+						"value": "fps"
 					}
 				],
 				"externalConsole": false,
